@@ -81,9 +81,12 @@
         
         /* Animated gradient background */
         .gradient-bg {
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0, 255, 65, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 255, 65, 0.08) 0%, transparent 50%),
+                linear-gradient(135deg, #0a0a0a 0%, #0f0f0f 25%, #1a1a1a 50%, #0f0f0f 75%, #0a0a0a 100%);
             background-size: 200% 200%;
-            animation: gradientShift 15s ease infinite;
+            animation: gradientShift 20s ease infinite;
         }
         
         @keyframes gradientShift {
@@ -119,8 +122,8 @@
         
         /* Service cards */
         .service-card {
-            background: var(--card-bg);
-            border: 1px solid #222;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+            border: 1px solid #2a2a2a;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
@@ -138,6 +141,18 @@
             transition: opacity 0.4s ease;
         }
         
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="80" cy="20" r="30" fill="%2300ff41" opacity="0.03"/></svg>');
+            background-size: cover;
+            pointer-events: none;
+        }
+        
         .service-card:hover::before {
             opacity: 1;
         }
@@ -145,7 +160,9 @@
         .service-card:hover {
             transform: translateY(-10px);
             border-color: var(--neon-green);
-            box-shadow: 0 10px 40px rgba(0, 255, 65, 0.2);
+            box-shadow: 0 10px 40px rgba(0, 255, 65, 0.2),
+                        0 0 20px rgba(0, 255, 65, 0.1);
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
         }
         
         .service-card img {
@@ -237,8 +254,8 @@
     <nav class="fixed w-full top-0 z-50 bg-black bg-opacity-90 backdrop-blur-md border-b border-gray-800">
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
-                <div class="flex items-center">
-                    <img src="logo-carmo-detail-horizontal.png" alt="Carmo Detail Logo" class="h-10 md:h-14 w-auto">
+                <div class="flex items-center space-x-3">
+                    <img src="logo-carmo-detail.png" alt="Carmo Detail Logo" class="h-12 md:h-14 w-auto">
                 </div>
                 
                 <!-- Desktop Menu -->
@@ -282,7 +299,7 @@
     <section id="home" class="hero-section min-h-screen flex items-center pt-20">
         <div class="container mx-auto px-6">
             <div class="max-w-5xl mx-auto text-center">
-                <div class="mb-12 fade-in flex justify-center">
+                <div class="mb-6 fade-in flex justify-center">
                     <img src="logo-carmo-detail-horizontal.png" alt="Carmo Detail Logo" class="w-full max-w-3xl h-auto">
                 </div>
                 <p class="text-2xl md:text-3xl text-gray-300 mb-4 fade-in font-light">
@@ -546,36 +563,9 @@
                         </div>
                     </div>
                     
-                    <div class="grid md:grid-cols-2 gap-6 mb-6">
-                        <div>
-                            <label class="block text-sm font-semibold mb-2 text-green-400">Email</label>
-                            <input type="email" name="email" required class="form-input w-full px-4 py-3 rounded-lg" placeholder="seu@email.com">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold mb-2 text-green-400">Modelo do Veículo</label>
-                            <input type="text" name="veiculo" required class="form-input w-full px-4 py-3 rounded-lg" placeholder="Ex: Honda Civic 2020">
-                        </div>
-                    </div>
-                    
-                    <div class="grid md:grid-cols-2 gap-6 mb-6">
-                        <div>
-                            <label class="block text-sm font-semibold mb-2 text-green-400">Data Preferencial</label>
-                            <input type="date" name="data" required class="form-input w-full px-4 py-3 rounded-lg">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold mb-2 text-green-400">Horário Preferencial</label>
-                            <select name="horario" required class="form-input w-full px-4 py-3 rounded-lg">
-                                <option value="">Selecione</option>
-                                <option value="08:00">08:00</option>
-                                <option value="09:00">09:00</option>
-                                <option value="10:00">10:00</option>
-                                <option value="11:00">11:00</option>
-                                <option value="14:00">14:00</option>
-                                <option value="15:00">15:00</option>
-                                <option value="16:00">16:00</option>
-                                <option value="17:00">17:00</option>
-                            </select>
-                        </div>
+                    <div class="mb-6">
+                        <label class="block text-sm font-semibold mb-2 text-green-400">Modelo do Veículo</label>
+                        <input type="text" name="veiculo" required class="form-input w-full px-4 py-3 rounded-lg" placeholder="Ex: Honda Civic 2020">
                     </div>
                     
                     <div class="mb-6">
@@ -593,13 +583,23 @@
                     </div>
                     
                     <div class="mb-6">
-                        <label class="block text-sm font-semibold mb-2 text-green-400">Observações</label>
-                        <textarea name="observacoes" rows="4" class="form-input w-full px-4 py-3 rounded-lg" placeholder="Informações adicionais sobre o serviço"></textarea>
+                        <label class="block text-sm font-semibold mb-2 text-green-400">Data e Horário Preferencial</label>
+                        <input type="text" name="data_horario" required class="form-input w-full px-4 py-3 rounded-lg" placeholder="Ex: Quinta-feira, 10h ou Sábado pela manhã">
+                        <p class="text-xs text-gray-500 mt-2">*Entraremos em contato para confirmar a disponibilidade</p>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label class="block text-sm font-semibold mb-2 text-green-400">Observações (opcional)</label>
+                        <textarea name="observacoes" rows="4" class="form-input w-full px-4 py-3 rounded-lg" placeholder="Informações adicionais sobre o serviço ou preferências de horário"></textarea>
                     </div>
                     
                     <button type="submit" class="neon-btn w-full py-4 rounded-lg font-semibold text-lg">
-                        ENVIAR SOLICITAÇÃO
+                        ENVIAR SOLICITAÇÃO VIA WHATSAPP
                     </button>
+                    
+                    <p class="text-center text-gray-500 text-sm mt-4">
+                        Você será redirecionado para o WhatsApp para confirmar o agendamento
+                    </p>
                 </form>
                 
                 <div id="success-message" class="hidden mt-6 p-6 bg-green-500 bg-opacity-20 border-2 border-green-400 rounded-lg text-center">
@@ -731,28 +731,26 @@
             
             // Create WhatsApp message
             const message = `
-*NOVO AGENDAMENTO - CARMO DETAIL*
+*🚗 SOLICITAÇÃO DE AGENDAMENTO - CARMO DETAIL*
 
 👤 *Nome:* ${data.nome}
 📱 *Telefone:* ${data.telefone}
-📧 *Email:* ${data.email}
 🚗 *Veículo:* ${data.veiculo}
-📅 *Data:* ${data.data}
-⏰ *Horário:* ${data.horario}
 🔧 *Serviço:* ${data.servico}
-📝 *Observações:* ${data.observacoes || 'Nenhuma'}
+📅 *Preferência de Data/Horário:* ${data.data_horario}
+${data.observacoes ? `📝 *Observações:* ${data.observacoes}` : ''}
+
+_Aguardo confirmação da disponibilidade!_
             `.trim();
             
             const whatsappUrl = `https://wa.me/5521979132114?text=${encodeURIComponent(message)}`;
             
+            // Open WhatsApp directly
+            window.open(whatsappUrl, '_blank');
+            
             // Show success message
             successMessage.classList.remove('hidden');
             bookingForm.reset();
-            
-            // Open WhatsApp
-            setTimeout(() => {
-                window.open(whatsappUrl, '_blank');
-            }, 1000);
             
             // Hide success message after 5 seconds
             setTimeout(() => {

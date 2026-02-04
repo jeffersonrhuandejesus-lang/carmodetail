@@ -141,18 +141,6 @@
             transition: opacity 0.4s ease;
         }
         
-        .service-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="80" cy="20" r="30" fill="%2300ff41" opacity="0.03"/></svg>');
-            background-size: cover;
-            pointer-events: none;
-        }
-        
         .service-card:hover::before {
             opacity: 1;
         }
@@ -179,6 +167,8 @@
             border: 1px solid #333;
             color: white;
             transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
         }
         
         .form-input:focus {
@@ -186,6 +176,16 @@
             border-color: var(--neon-green);
             outline: none;
             box-shadow: 0 0 15px var(--neon-green-glow);
+            z-index: 10;
+        }
+        
+        .form-input option {
+            background: #1a1a1a;
+            color: white;
+        }
+        
+        .form-input select {
+            cursor: pointer;
         }
         
         /* Scroll animations */
@@ -255,7 +255,7 @@
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-3">
-                    <img src="logo-carmo-detail.png" alt="Carmo Detail Logo" class="h-12 md:h-14 w-auto">
+                    <img src="logo-carmo-detail.png" alt="Carmo Detail Logo" class="h-16 md:h-20 w-auto">
                 </div>
                 
                 <!-- Desktop Menu -->
@@ -299,7 +299,7 @@
     <section id="home" class="hero-section min-h-screen flex items-center pt-20">
         <div class="container mx-auto px-6">
             <div class="max-w-5xl mx-auto text-center">
-                <div class="mb-6 fade-in flex justify-center">
+                <div class="mb-3 fade-in flex justify-center">
                     <img src="logo-carmo-detail-horizontal.png" alt="Carmo Detail Logo" class="w-full max-w-3xl h-auto">
                 </div>
                 <p class="text-2xl md:text-3xl text-gray-300 mb-4 fade-in font-light">
@@ -313,7 +313,7 @@
                     <a href="#agendamento" class="neon-btn px-8 py-4 rounded-lg font-semibold text-lg">
                         AGENDAR SERVIÇO
                     </a>
-                    <a href="https://wa.me/5521979132114" target="_blank" class="bg-green-500 hover:bg-green-600 px-8 py-4 rounded-lg font-semibold text-lg text-black transition">
+                    <a href="https://wa.me/5573998604434" target="_blank" class="bg-green-500 hover:bg-green-600 px-8 py-4 rounded-lg font-semibold text-lg text-black transition">
                         WHATSAPP
                     </a>
                 </div>
@@ -349,7 +349,7 @@
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Service 1 -->
-                <div class="service-card rounded-xl p-6 fade-in">
+                <div class="service-card rounded-xl p-6 fade-in" style="min-height: 280px;">
                     <div class="w-16 h-16 bg-green-500 bg-opacity-20 rounded-lg flex items-center justify-center mb-4">
                         <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -365,7 +365,7 @@
                 </div>
                 
                 <!-- Service 2 -->
-                <div class="service-card rounded-xl p-6 fade-in">
+                <div class="service-card rounded-xl p-6 fade-in" style="min-height: 280px;">
                     <div class="w-16 h-16 bg-green-500 bg-opacity-20 rounded-lg flex items-center justify-center mb-4">
                         <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -381,7 +381,7 @@
                 </div>
                 
                 <!-- Service 3 -->
-                <div class="service-card rounded-xl p-6 fade-in">
+                <div class="service-card rounded-xl p-6 fade-in" style="min-height: 280px;">
                     <div class="w-16 h-16 bg-green-500 bg-opacity-20 rounded-lg flex items-center justify-center mb-4">
                         <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -397,7 +397,7 @@
                 </div>
                 
                 <!-- Service 4 -->
-                <div class="service-card rounded-xl p-6 fade-in">
+                <div class="service-card rounded-xl p-6 fade-in" style="min-height: 280px;">
                     <div class="w-16 h-16 bg-green-500 bg-opacity-20 rounded-lg flex items-center justify-center mb-4">
                         <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -413,7 +413,7 @@
                 </div>
                 
                 <!-- Service 5 -->
-                <div class="service-card rounded-xl p-6 fade-in">
+                <div class="service-card rounded-xl p-6 fade-in" style="min-height: 280px;">
                     <div class="w-16 h-16 bg-green-500 bg-opacity-20 rounded-lg flex items-center justify-center mb-4">
                         <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -429,7 +429,7 @@
                 </div>
                 
                 <!-- Service 6 -->
-                <div class="service-card rounded-xl p-6 fade-in">
+                <div class="service-card rounded-xl p-6 fade-in" style="min-height: 280px;">
                     <div class="w-16 h-16 bg-green-500 bg-opacity-20 rounded-lg flex items-center justify-center mb-4">
                         <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -445,7 +445,7 @@
                 </div>
                 
                 <!-- Service 7 -->
-                <div class="service-card rounded-xl p-6 fade-in">
+                <div class="service-card rounded-xl p-6 fade-in" style="min-height: 280px;">
                     <div class="w-16 h-16 bg-green-500 bg-opacity-20 rounded-lg flex items-center justify-center mb-4">
                         <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -473,62 +473,55 @@
                 <p class="text-gray-400 text-lg">Confira alguns dos nossos trabalhos</p>
             </div>
             
+            <!-- 
+                INSTRUÇÕES PARA ADICIONAR SUAS FOTOS:
+                
+                1. Coloque suas 8 fotos na mesma pasta do site
+                2. Nomeie-as como: foto1.jpg, foto2.jpg, foto3.jpg... até foto8.jpg
+                3. Ou substitua os src="fotoX.jpg" abaixo pelos nomes das suas fotos
+                
+                Exemplo: <img src="minha-foto-carro.jpg" alt="...">
+            -->
+            
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Foto 1 -->
                 <div class="gallery-item aspect-square rounded-lg overflow-hidden fade-in cursor-pointer group">
-                    <div class="w-full h-full bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-16 h-16 text-white opacity-50" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"></path>
-                        </svg>
-                    </div>
+                    <img src="foto1.jpg" alt="Trabalho Carmo Detail" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center\'><svg class=\'w-16 h-16 text-white opacity-50\' fill=\'currentColor\' viewBox=\'0 0 20 20\'><path d=\'M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z\'></path></svg></div>'">
                 </div>
+                
+                <!-- Foto 2 -->
                 <div class="gallery-item aspect-square rounded-lg overflow-hidden fade-in cursor-pointer group">
-                    <div class="w-full h-full bg-gradient-to-br from-gray-600 to-gray-800 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-16 h-16 text-white opacity-50" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"></path>
-                        </svg>
-                    </div>
+                    <img src="foto2.jpg" alt="Trabalho Carmo Detail" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-gray-600 to-gray-800 flex items-center justify-center\'><svg class=\'w-16 h-16 text-white opacity-50\' fill=\'currentColor\' viewBox=\'0 0 20 20\'><path d=\'M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z\'></path></svg></div>'">
                 </div>
+                
+                <!-- Foto 3 -->
                 <div class="gallery-item aspect-square rounded-lg overflow-hidden fade-in cursor-pointer group">
-                    <div class="w-full h-full bg-gradient-to-br from-green-600 to-green-900 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-16 h-16 text-white opacity-50" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"></path>
-                        </svg>
-                    </div>
+                    <img src="foto3.jpg" alt="Trabalho Carmo Detail" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-green-600 to-green-900 flex items-center justify-center\'><svg class=\'w-16 h-16 text-white opacity-50\' fill=\'currentColor\' viewBox=\'0 0 20 20\'><path d=\'M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z\'></path></svg></div>'">
                 </div>
+                
+                <!-- Foto 4 -->
                 <div class="gallery-item aspect-square rounded-lg overflow-hidden fade-in cursor-pointer group">
-                    <div class="w-full h-full bg-gradient-to-br from-gray-700 to-black flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-16 h-16 text-white opacity-50" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"></path>
-                        </svg>
-                    </div>
+                    <img src="foto4.jpg" alt="Trabalho Carmo Detail" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-gray-700 to-black flex items-center justify-center\'><svg class=\'w-16 h-16 text-white opacity-50\' fill=\'currentColor\' viewBox=\'0 0 20 20\'><path d=\'M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z\'></path></svg></div>'">
                 </div>
+                
+                <!-- Foto 5 -->
                 <div class="gallery-item aspect-square rounded-lg overflow-hidden fade-in cursor-pointer group">
-                    <div class="w-full h-full bg-gradient-to-br from-green-500 to-gray-800 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-16 h-16 text-white opacity-50" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"></path>
-                        </svg>
-                    </div>
+                    <img src="foto5.jpg" alt="Trabalho Carmo Detail" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-green-500 to-gray-800 flex items-center justify-center\'><svg class=\'w-16 h-16 text-white opacity-50\' fill=\'currentColor\' viewBox=\'0 0 20 20\'><path d=\'M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z\'></path></svg></div>'">
                 </div>
+                
+                <!-- Foto 6 -->
                 <div class="gallery-item aspect-square rounded-lg overflow-hidden fade-in cursor-pointer group">
-                    <div class="w-full h-full bg-gradient-to-br from-gray-500 to-green-700 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-16 h-16 text-white opacity-50" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"></path>
-                        </svg>
-                    </div>
+                    <img src="foto6.jpg" alt="Trabalho Carmo Detail" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-gray-500 to-green-700 flex items-center justify-center\'><svg class=\'w-16 h-16 text-white opacity-50\' fill=\'currentColor\' viewBox=\'0 0 20 20\'><path d=\'M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z\'></path></svg></div>'">
                 </div>
+                
+                <!-- Foto 7 -->
                 <div class="gallery-item aspect-square rounded-lg overflow-hidden fade-in cursor-pointer group">
-                    <div class="w-full h-full bg-gradient-to-br from-green-600 to-gray-900 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-16 h-16 text-white opacity-50" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"></path>
-                        </svg>
-                    </div>
+                    <img src="foto7.jpg" alt="Trabalho Carmo Detail" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-green-600 to-gray-900 flex items-center justify-center\'><svg class=\'w-16 h-16 text-white opacity-50\' fill=\'currentColor\' viewBox=\'0 0 20 20\'><path d=\'M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z\'></path></svg></div>'">
                 </div>
+                
+                <!-- Foto 8 -->
                 <div class="gallery-item aspect-square rounded-lg overflow-hidden fade-in cursor-pointer group">
-                    <div class="w-full h-full bg-gradient-to-br from-gray-600 to-green-800 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-16 h-16 text-white opacity-50" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"></path>
-                        </svg>
-                    </div>
+                    <img src="foto8.jpg" alt="Trabalho Carmo Detail" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-gray-600 to-green-800 flex items-center justify-center\'><svg class=\'w-16 h-16 text-white opacity-50\' fill=\'currentColor\' viewBox=\'0 0 20 20\'><path d=\'M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z\'></path></svg></div>'">
                 </div>
             </div>
             
@@ -551,26 +544,26 @@
                     <p class="text-gray-400 text-lg">Preencha o formulário e entraremos em contato</p>
                 </div>
                 
-                <form id="booking-form" class="service-card rounded-xl p-8 fade-in">
+                <form id="booking-form" class="service-card rounded-xl p-8 fade-in" style="position: relative; z-index: 1;">
                     <div class="grid md:grid-cols-2 gap-6 mb-6">
-                        <div>
+                        <div style="position: relative; z-index: 2;">
                             <label class="block text-sm font-semibold mb-2 text-green-400">Nome Completo</label>
-                            <input type="text" name="nome" required class="form-input w-full px-4 py-3 rounded-lg" placeholder="Seu nome">
+                            <input type="text" name="nome" required class="form-input w-full px-4 py-3 rounded-lg" placeholder="Seu nome" autocomplete="off">
                         </div>
-                        <div>
+                        <div style="position: relative; z-index: 2;">
                             <label class="block text-sm font-semibold mb-2 text-green-400">Telefone/WhatsApp</label>
-                            <input type="tel" name="telefone" required class="form-input w-full px-4 py-3 rounded-lg" placeholder="(21) 99999-9999">
+                            <input type="tel" name="telefone" required class="form-input w-full px-4 py-3 rounded-lg" placeholder="(21) 99999-9999" autocomplete="off">
                         </div>
                     </div>
                     
-                    <div class="mb-6">
+                    <div class="mb-6" style="position: relative; z-index: 2;">
                         <label class="block text-sm font-semibold mb-2 text-green-400">Modelo do Veículo</label>
-                        <input type="text" name="veiculo" required class="form-input w-full px-4 py-3 rounded-lg" placeholder="Ex: Honda Civic 2020">
+                        <input type="text" name="veiculo" required class="form-input w-full px-4 py-3 rounded-lg" placeholder="Ex: Honda Civic 2020" autocomplete="off">
                     </div>
                     
-                    <div class="mb-6">
+                    <div class="mb-6" style="position: relative; z-index: 3;">
                         <label class="block text-sm font-semibold mb-2 text-green-400">Serviço Desejado</label>
-                        <select name="servico" required class="form-input w-full px-4 py-3 rounded-lg">
+                        <select name="servico" required class="form-input w-full px-4 py-3 rounded-lg" style="cursor: pointer;">
                             <option value="">Selecione o serviço</option>
                             <option value="Lavagem Comercial">Lavagem Comercial</option>
                             <option value="Lavagem Técnica">Lavagem Técnica</option>
@@ -582,18 +575,18 @@
                         </select>
                     </div>
                     
-                    <div class="mb-6">
+                    <div class="mb-6" style="position: relative; z-index: 2;">
                         <label class="block text-sm font-semibold mb-2 text-green-400">Data e Horário Preferencial</label>
-                        <input type="text" name="data_horario" required class="form-input w-full px-4 py-3 rounded-lg" placeholder="Ex: Quinta-feira, 10h ou Sábado pela manhã">
+                        <input type="text" name="data_horario" required class="form-input w-full px-4 py-3 rounded-lg" placeholder="Ex: Quinta-feira, 10h ou Sábado pela manhã" autocomplete="off">
                         <p class="text-xs text-gray-500 mt-2">*Entraremos em contato para confirmar a disponibilidade</p>
                     </div>
                     
-                    <div class="mb-6">
+                    <div class="mb-6" style="position: relative; z-index: 2;">
                         <label class="block text-sm font-semibold mb-2 text-green-400">Observações (opcional)</label>
                         <textarea name="observacoes" rows="4" class="form-input w-full px-4 py-3 rounded-lg" placeholder="Informações adicionais sobre o serviço ou preferências de horário"></textarea>
                     </div>
                     
-                    <button type="submit" class="neon-btn w-full py-4 rounded-lg font-semibold text-lg">
+                    <button type="submit" class="neon-btn w-full py-4 rounded-lg font-semibold text-lg" style="position: relative; z-index: 1;">
                         ENVIAR SOLICITAÇÃO VIA WHATSAPP
                     </button>
                     
@@ -640,8 +633,8 @@
                     </div>
                     <h3 class="text-xl font-bold mb-2 text-green-400">Telefone</h3>
                     <p class="text-gray-400">
-                        <a href="https://wa.me/5521979132114" class="hover:text-green-400 transition">
-                            (21) 97913-2114
+                        <a href="https://wa.me/5573998604434" class="hover:text-green-400 transition">
+                            (73) 99860-4434
                         </a>
                     </p>
                 </div>
@@ -743,7 +736,7 @@ ${data.observacoes ? `📝 *Observações:* ${data.observacoes}` : ''}
 _Aguardo confirmação da disponibilidade!_
             `.trim();
             
-            const whatsappUrl = `https://wa.me/5521979132114?text=${encodeURIComponent(message)}`;
+            const whatsappUrl = `https://wa.me/5573998604434?text=${encodeURIComponent(message)}`;
             
             // Open WhatsApp directly
             window.open(whatsappUrl, '_blank');

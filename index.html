@@ -161,6 +161,13 @@
             transform: scale(1.1);
         }
         
+        /* Contact section links */
+        .service-card a {
+            position: relative;
+            z-index: 10;
+            pointer-events: auto;
+        }
+        
         /* Form styling */
         .form-input {
             background: rgba(255, 255, 255, 0.05);
@@ -435,115 +442,136 @@
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Service 1 -->
-                <div class="service-card rounded-xl p-6 fade-in" style="min-height: 280px;">
+                <div class="service-card rounded-xl p-6 fade-in" style="min-height: 320px; display: flex; flex-direction: column;">
                     <div class="w-16 h-16 bg-green-500 bg-opacity-20 rounded-lg flex items-center justify-center mb-4">
                         <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-green-400">Lavagem Comercial</h3>
-                    <p class="text-gray-400 mb-4">Lavagem completa externa com produtos premium e acabamento impecável.</p>
-                    <ul class="text-sm text-gray-500 space-y-2">
+                    <p class="text-gray-400 mb-4 flex-grow">Lavagem completa externa com produtos premium e acabamento impecável.</p>
+                    <ul class="text-sm text-gray-500 space-y-2 mb-4">
                         <li>• Shampoo automotivo profissional</li>
                         <li>• Limpeza de rodas e pneus</li>
                         <li>• Secagem detalhada</li>
                     </ul>
+                    <button onclick="selectService('Lavagem Comercial')" class="neon-btn w-full py-3 rounded-lg font-semibold text-sm mt-auto">
+                        AGENDAR ESTE SERVIÇO
+                    </button>
                 </div>
                 
                 <!-- Service 2 -->
-                <div class="service-card rounded-xl p-6 fade-in" style="min-height: 280px;">
+                <div class="service-card rounded-xl p-6 fade-in" style="min-height: 320px; display: flex; flex-direction: column;">
                     <div class="w-16 h-16 bg-green-500 bg-opacity-20 rounded-lg flex items-center justify-center mb-4">
                         <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-green-400">Lavagem Técnica</h3>
-                    <p class="text-gray-400 mb-4">Processo técnico completo incluindo descontaminação e preparação da pintura.</p>
-                    <ul class="text-sm text-gray-500 space-y-2">
+                    <p class="text-gray-400 mb-4 flex-grow">Processo técnico completo incluindo descontaminação e preparação da pintura.</p>
+                    <ul class="text-sm text-gray-500 space-y-2 mb-4">
                         <li>• Descontaminação com clay bar</li>
                         <li>• Pré-lavagem detalhada</li>
                         <li>• Two bucket method</li>
                     </ul>
+                    <button onclick="selectService('Lavagem Técnica')" class="neon-btn w-full py-3 rounded-lg font-semibold text-sm mt-auto">
+                        AGENDAR ESTE SERVIÇO
+                    </button>
                 </div>
                 
                 <!-- Service 3 -->
-                <div class="service-card rounded-xl p-6 fade-in" style="min-height: 280px;">
+                <div class="service-card rounded-xl p-6 fade-in" style="min-height: 320px; display: flex; flex-direction: column;">
                     <div class="w-16 h-16 bg-green-500 bg-opacity-20 rounded-lg flex items-center justify-center mb-4">
                         <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-green-400">Limpeza de Motor</h3>
-                    <p class="text-gray-400 mb-4">Limpeza profunda e segura do compartimento do motor.</p>
-                    <ul class="text-sm text-gray-500 space-y-2">
+                    <p class="text-gray-400 mb-4 flex-grow">Limpeza profunda e segura do compartimento do motor.</p>
+                    <ul class="text-sm text-gray-500 space-y-2 mb-4">
                         <li>• Proteção de componentes elétricos</li>
                         <li>• Desengraxe profissional</li>
                         <li>• Finalização com protetor</li>
                     </ul>
+                    <button onclick="selectService('Limpeza de Motor')" class="neon-btn w-full py-3 rounded-lg font-semibold text-sm mt-auto">
+                        AGENDAR ESTE SERVIÇO
+                    </button>
                 </div>
                 
                 <!-- Service 4 -->
-                <div class="service-card rounded-xl p-6 fade-in" style="min-height: 280px;">
+                <div class="service-card rounded-xl p-6 fade-in" style="min-height: 320px; display: flex; flex-direction: column;">
                     <div class="w-16 h-16 bg-green-500 bg-opacity-20 rounded-lg flex items-center justify-center mb-4">
                         <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-green-400">Tratamento nos Vidros</h3>
-                    <p class="text-gray-400 mb-4">Aplicação de produtos especiais para proteção e visibilidade.</p>
-                    <ul class="text-sm text-gray-500 space-y-2">
+                    <p class="text-gray-400 mb-4 flex-grow">Aplicação de produtos especiais para proteção e visibilidade.</p>
+                    <ul class="text-sm text-gray-500 space-y-2 mb-4">
                         <li>• Repelente de água</li>
                         <li>• Polimento de vidros</li>
                         <li>• Remoção de manchas</li>
                     </ul>
+                    <button onclick="selectService('Tratamento nos Vidros')" class="neon-btn w-full py-3 rounded-lg font-semibold text-sm mt-auto">
+                        AGENDAR ESTE SERVIÇO
+                    </button>
                 </div>
                 
                 <!-- Service 5 -->
-                <div class="service-card rounded-xl p-6 fade-in" style="min-height: 280px;">
+                <div class="service-card rounded-xl p-6 fade-in" style="min-height: 320px; display: flex; flex-direction: column;">
                     <div class="w-16 h-16 bg-green-500 bg-opacity-20 rounded-lg flex items-center justify-center mb-4">
                         <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-green-400">Polimento Técnico</h3>
-                    <p class="text-gray-400 mb-4">Correção de pintura com equipamentos profissionais.</p>
-                    <ul class="text-sm text-gray-500 space-y-2">
+                    <p class="text-gray-400 mb-4 flex-grow">Correção de pintura com equipamentos profissionais.</p>
+                    <ul class="text-sm text-gray-500 space-y-2 mb-4">
                         <li>• Remoção de riscos e hologramas</li>
                         <li>• Restauração do brilho</li>
                         <li>• Acabamento espelhado</li>
                     </ul>
+                    <button onclick="selectService('Polimento Técnico')" class="neon-btn w-full py-3 rounded-lg font-semibold text-sm mt-auto">
+                        AGENDAR ESTE SERVIÇO
+                    </button>
                 </div>
                 
                 <!-- Service 6 -->
-                <div class="service-card rounded-xl p-6 fade-in" style="min-height: 280px;">
+                <div class="service-card rounded-xl p-6 fade-in" style="min-height: 320px; display: flex; flex-direction: column;">
                     <div class="w-16 h-16 bg-green-500 bg-opacity-20 rounded-lg flex items-center justify-center mb-4">
                         <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-green-400">Polimento Comercial</h3>
-                    <p class="text-gray-400 mb-4">Polimento rápido para renovação do brilho da pintura.</p>
-                    <ul class="text-sm text-gray-500 space-y-2">
+                    <p class="text-gray-400 mb-4 flex-grow">Polimento rápido para renovação do brilho da pintura.</p>
+                    <ul class="text-sm text-gray-500 space-y-2 mb-4">
                         <li>• Processo otimizado</li>
                         <li>• Realce do brilho</li>
                         <li>• Proteção inclusa</li>
                     </ul>
+                    <button onclick="selectService('Polimento Comercial')" class="neon-btn w-full py-3 rounded-lg font-semibold text-sm mt-auto">
+                        AGENDAR ESTE SERVIÇO
+                    </button>
                 </div>
                 
                 <!-- Service 7 -->
-                <div class="service-card rounded-xl p-6 fade-in" style="min-height: 280px;">
+                <div class="service-card rounded-xl p-6 fade-in" style="min-height: 320px; display: flex; flex-direction: column;">
                     <div class="w-16 h-16 bg-green-500 bg-opacity-20 rounded-lg flex items-center justify-center mb-4">
                         <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-green-400">Higienização Interna</h3>
-                    <p class="text-gray-400 mb-4">Limpeza profunda de bancos, carpetes e acabamentos internos.</p>
-                    <ul class="text-sm text-gray-500 space-y-2">
+                    <p class="text-gray-400 mb-4 flex-grow">Limpeza profunda de bancos, carpetes e acabamentos internos.</p>
+                    <ul class="text-sm text-gray-500 space-y-2 mb-4">
                         <li>• Extratora de estofados</li>
                         <li>• Limpeza de ar condicionado</li>
                         <li>• Aromatização</li>
                     </ul>
+                    <button onclick="selectService('Higienização Interna')" class="neon-btn w-full py-3 rounded-lg font-semibold text-sm mt-auto">
+                        AGENDAR ESTE SERVIÇO
+                    </button>
                 </div>
             </div>
         </div>
@@ -708,8 +736,8 @@
                         </svg>
                     </div>
                     <h3 class="text-xl font-bold mb-2 text-green-400">Localização</h3>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Rua+Alcebíades+de+Novaes,+142,+Maracás,+RJ" target="_blank" class="text-gray-400 hover:text-green-400 transition cursor-pointer">
-                        Rua Alcebíades de Novaes, 142<br>Maracás - RJ
+                    <a href="https://www.google.com/maps/search/?api=1&query=Rua+Alcebíades+de+Novaes,+142,+Maracás,+BA" target="_blank" class="text-gray-400 hover:text-green-400 transition cursor-pointer block" style="pointer-events: auto;">
+                        Rua Alcebíades de Novaes, 142<br>Maracás - BA
                     </a>
                 </div>
                 
@@ -721,7 +749,7 @@
                     </div>
                     <h3 class="text-xl font-bold mb-2 text-green-400">Telefone</h3>
                     <p class="text-gray-400">
-                        <a href="tel:+5573998604434" class="hover:text-green-400 transition cursor-pointer">
+                        <a href="tel:+5573998604434" class="hover:text-green-400 transition cursor-pointer block" style="pointer-events: auto;">
                             (73) 99860-4434
                         </a>
                     </p>
@@ -756,9 +784,38 @@
                 <img src="logo-carmo-detail-horizontal.png" alt="Carmo Detail Logo" class="h-12 md:h-16 w-auto">
             </div>
             <p class="text-gray-500 text-sm">© 2024 Carmo Detail. Todos os direitos reservados.</p>
-            <p class="text-gray-600 text-xs mt-2">Centro de Estética Automotiva - Maracás, RJ</p>
+            <p class="text-gray-600 text-xs mt-2">Centro de Estética Automotiva - Maracás, BA</p>
         </div>
     </footer>
+
+    <!-- Music Player -->
+    <div id="music-player" class="fixed bottom-6 right-6 z-50">
+        <button id="music-toggle" class="service-card rounded-full p-4 hover:scale-110 transition-transform shadow-lg" style="width: 60px; height: 60px;">
+            <svg id="play-icon" class="w-8 h-8 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"></path>
+            </svg>
+            <svg id="pause-icon" class="w-8 h-8 text-green-400 hidden" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M5.75 3a.75.75 0 00-.75.75v12.5c0 .414.336.75.75.75h1.5a.75.75 0 00.75-.75V3.75A.75.75 0 007.25 3h-1.5zM12.75 3a.75.75 0 00-.75.75v12.5c0 .414.336.75.75.75h1.5a.75.75 0 00.75-.75V3.75a.75.75 0 00-.75-.75h-1.5z"></path>
+            </svg>
+        </button>
+        <audio id="bg-music" loop>
+            <!-- Músicas sugeridas (escolha uma ou adicione a sua):
+            
+            OPÇÃO 1: Such a Whore - JVLA (sua escolha)
+            <source src="such-a-whore.mp3" type="audio/mpeg">
+            
+            OPÇÃO 2: Phonky Town - PlayaPhonk (vibe de carros)
+            <source src="phonky-town.mp3" type="audio/mpeg">
+            
+            OPÇÃO 3: NEON BLADE - MoonDeity (phonk/carros)
+            <source src="neon-blade.mp3" type="audio/mpeg">
+            
+            OPÇÃO 4: COWBELL CULT! - LXST CXNTURY (drift phonk)
+            <source src="cowbell-cult.mp3" type="audio/mpeg">
+            -->
+            <source src="bg-music.mp3" type="audio/mpeg">
+        </audio>
+    </div>
 
     <!-- Lightbox for Gallery -->
     <div id="lightbox" class="lightbox">
@@ -773,6 +830,69 @@
 
     <!-- JavaScript -->
     <script>
+        // Music Player Functionality
+        const bgMusic = document.getElementById('bg-music');
+        const musicToggle = document.getElementById('music-toggle');
+        const playIcon = document.getElementById('play-icon');
+        const pauseIcon = document.getElementById('pause-icon');
+        let isPlaying = false;
+        
+        // Try to autoplay on user interaction
+        document.addEventListener('click', () => {
+            if (!isPlaying) {
+                bgMusic.play().catch(e => console.log('Autoplay prevented'));
+            }
+        }, { once: true });
+        
+        musicToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (isPlaying) {
+                bgMusic.pause();
+                playIcon.classList.remove('hidden');
+                pauseIcon.classList.add('hidden');
+            } else {
+                bgMusic.play();
+                playIcon.classList.add('hidden');
+                pauseIcon.classList.remove('hidden');
+            }
+            isPlaying = !isPlaying;
+        });
+        
+        // Update icon when music plays/pauses
+        bgMusic.addEventListener('play', () => {
+            isPlaying = true;
+            playIcon.classList.add('hidden');
+            pauseIcon.classList.remove('hidden');
+        });
+        
+        bgMusic.addEventListener('pause', () => {
+            isPlaying = false;
+            playIcon.classList.remove('hidden');
+            pauseIcon.classList.add('hidden');
+        });
+        
+        // Set volume to 30% for background music
+        bgMusic.volume = 0.3;
+        
+        // Function to select service and scroll to booking
+        function selectService(serviceName) {
+            // Scroll to booking section
+            const bookingSection = document.getElementById('agendamento');
+            bookingSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Wait for scroll to finish, then select the service
+            setTimeout(() => {
+                const serviceSelect = document.querySelector('select[name="servico"]');
+                serviceSelect.value = serviceName;
+                
+                // Add a flash animation to the select
+                serviceSelect.style.boxShadow = '0 0 30px rgba(0, 255, 65, 0.8)';
+                setTimeout(() => {
+                    serviceSelect.style.boxShadow = '';
+                }, 1000);
+            }, 800);
+        }
+        
         // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
